@@ -1,0 +1,90 @@
+{
+  "publisher": "wof",
+  "name": "vscode-js2ts",
+  "displayName": "js2ts",
+  "description": "js2ts is a VSCode extension that can convert JavaScript objects or JSON data into TypeScript interfaces.",
+  "icon": "assets/logo.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:js2ts",
+    "onCommand:fetch2ts"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Js2Ts configuration",
+      "properties": {
+        "vscode-js2ts.ShowInterfaceExport": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否显示导出类型(Show export or not)"
+        },
+        "vscode-js2ts.ApiHeaders": {
+          "type": "string",
+          "default": "{}",
+          "description": "配置请求头(Configure request headers)\n example {\"参数名\":\"数据\",...,\"参数名\":\"数据\",...}"
+        },
+        "vscode-js2ts.ApiHost": {
+          "type": "string",
+          "default": "",
+          "description": "配置host地址(Configure host address)"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "js2ts",
+        "key": "ctrl+alt+v"
+      },
+      {
+        "command": "fetch2ts",
+        "key": "ctrl+alt+f"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "pnpm vsce package --no-dependencies",
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "js2ts",
+    "Js2ts",
+    "Js2Ts",
+    "json2ts",
+    "typescript",
+    "javascript",
+    "js to ts",
+    "object 2 ts",
+    "javascript 2 ts",
+    "javascript to ts",
+    "javascript to typescript",
+    "js",
+    "html",
+    "css"
+  ]
+}
