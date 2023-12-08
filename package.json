@@ -4,7 +4,7 @@
   "displayName": "js2ts",
   "description": "js2ts is a VSCode extension that can convert JavaScript objects or JSON data into TypeScript interfaces.",
   "icon": "assets/logo.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.83.0"
   },
